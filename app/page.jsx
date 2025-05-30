@@ -500,19 +500,19 @@ export default function Home() {
 
         <div className="mt-4 flex justify-center space-x-4 text-sm ">
           <a
-            href="/about"
+            href="https://utmmart.netlify.app/about"
             className="text-blue-700 transition underline"
           >
             About
           </a>
           <a
-            href="/privacy-policy"
+            href="https://utmmart.netlify.app/privacy"
             className="text-blue-700 transition underline"
           >
             Privacy Policy
           </a>
           <a
-            href="/terms"
+            href="https://utmmart.netlify.app/terms"
             className="text-blue-700 transition underline"
           >
             Terms & Conditions
