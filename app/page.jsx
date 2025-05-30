@@ -13,6 +13,7 @@ import {
   FaCar,
   FaCoffee,
   FaStar,
+  FaTimes
 } from "react-icons/fa";
 import DownloadButton from "./download";
 const benefits = [
