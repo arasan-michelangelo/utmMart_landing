@@ -4,7 +4,13 @@ import { motion } from "framer-motion";
 import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
-import { FaShoppingCart, FaUsers, FaTags, FaRecycle, FaTimes } from "react-icons/fa";
+import {
+  FaShoppingCart,
+  FaUsers,
+  FaTags,
+  FaRecycle,
+  FaTimes,
+} from "react-icons/fa";
 const benefits = [
   {
     icon: <FaShoppingCart className="text-white text-2xl" />,
@@ -64,7 +70,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white text-black font-sans flex flex-col items-center px-6">
       <Head>
-        <title>UTMart - Campus Marketplace</title>
+        <title>CampusMart - Campus Marketplace</title>
         <meta
           name="description"
           content="A sleek mobile landing page for students"
@@ -73,12 +79,27 @@ export default function Home() {
 
       {/* Header */}
       <header className="flex justify-between items-center w-full max-w-md py-6">
-        <h1 className="text-2xl font-bold">UTMart</h1>
+        <h1 className="text-2xl font-bold">CampusMart</h1>
         <button
-          onClick={() => setIsOpen(true)}
+          onClick={() => {
+            const userAgent =
+              navigator.userAgent || navigator.vendor || window.opera;
+
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+              // iOS device
+              window.location.href = "https://apps.apple.com/app/campus-mart/id6746312127";
+            } else if (/android/i.test(userAgent)) {
+              // Android device
+              window.location.href =
+                "https://play.google.com/store/apps/details?id=com.artist1711.campusapp";
+            } else {
+              // Fallback: send to website or show a message
+              window.location.href = "https://utmmart.netlify.app/";
+            }
+          }}
           className="px-4 py-2 text-white bg-red-800 rounded-lg"
         >
-          Get Started
+          Download
         </button>
       </header>
 
@@ -98,24 +119,26 @@ export default function Home() {
           />
         </motion.div>
 
-        <h1 className="text-4xl font-bold">UTMart</h1>
+        <h1 className="text-4xl font-bold">CampusMart</h1>
         <p className="text-lg mt-4 max-w-sm text-gray-700">
-          UTMart is a campus marketplace where students can buy, sell, and trade
-          essentials easily. Find what you need, save money, and connect with
-          others—all in one place!
+          CampusMart is a campus marketplace where students can buy, sell, and
+          trade essentials easily. Find what you need, save money, and connect
+          with others—all in one place!
         </p>
-        <motion.img
-          src="/images/playstore.png"
-          alt="Download App"
-          className="w-40 mt-6 hover:scale-105 transition-transform cursor-pointer"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-        />
+        <div className="flex flex-row">
+          <motion.img
+            src="/images/store.webp"
+            alt="Download App"
+            className="w-120 mt-8 hover:scale-105 transition-transform cursor-pointer"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+          />
+        </div>
       </section>
 
       {/* Featured Products */}
-      <section className="relative flex justify-center py-16 items-center  overflow-hidden">
+      <section className="flex justify-center py-14 gap-10 items-center">
         {/* Left Image */}
         <motion.div
           className="flex items-center left-0 transform -translate-x-1/2 z-0"
@@ -125,23 +148,23 @@ export default function Home() {
         >
           <Image
             src="/images/product2.png"
-            width={200}
-            height={200}
+            width={150}
+            height={150}
             alt="Product 2"
           />
         </motion.div>
 
         {/* Center Image (on top) */}
         <motion.div
-          className="relative z-10"
+          className="absolute z-20"
           initial={{ scale: 0.8, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.6 }}
         >
           <Image
             src="/images/product1.png"
-            width={300}
-            height={300}
+            width={200}
+            height={200}
             alt="Product 1"
           />
         </motion.div>
@@ -155,8 +178,8 @@ export default function Home() {
         >
           <Image
             src="/images/product3.png"
-            width={200}
-            height={200}
+            width={150}
+            height={150}
             alt="Product 3"
           />
         </motion.div>
@@ -224,15 +247,15 @@ export default function Home() {
           powerful features
         </motion.h2>
         <motion.button
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ amount: 0.3 }}
-            onClick={() => setIsOpen(true)}
-            className="px-4 py-2 mt-7 text-white bg-red-800 rounded-lg"
-          >
-            Get Started
-          </motion.button>
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ amount: 0.3 }}
+          onClick={() => setIsOpen(true)}
+          className="px-4 py-2 mt-7 text-white bg-red-800 rounded-lg"
+        >
+          Get Started
+        </motion.button>
       </section>
       {/* Call to Action Sections */}
       {[1, 2, 3, 4, 5].map((num) => (
@@ -329,15 +352,15 @@ export default function Home() {
           it does a lot of things
         </motion.h2>
         <motion.button
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ amount: 0.3 }}
-            onClick={() => setIsOpen(true)}
-            className="px-4 py-2 mt-7 text-white bg-red-800 rounded-lg"
-          >
-            Get Started
-          </motion.button>
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ amount: 0.3 }}
+          onClick={() => setIsOpen(true)}
+          className="px-4 py-2 mt-7 text-white bg-red-800 rounded-lg"
+        >
+          Get Started
+        </motion.button>
       </section>
       <motion.section
         className="py-16 text-center"
@@ -426,7 +449,7 @@ export default function Home() {
         className="bg-white text-gray-700 py-4 mt-10 w-full text-center"
       >
         <p className="text-sm">
-          Developed by <span className="font-semibold">Malaiarasan</span>
+          Developed by <span className="font-semibold">MALAIARASAN</span>
         </p>
         <p className="text-sm mt-1">
           Contact:
@@ -443,29 +466,65 @@ export default function Home() {
       </motion.footer>
 
       {isOpen && (
-  <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-30">
-    <div className="bg-white p-6 rounded-lg shadow-lg w-80 text-center relative">
-      <button
-        onClick={() => setIsOpen(false)}
-        className="absolute top-3 right-3 text-gray-600 hover:text-gray-800"
-      >
-        <FaTimes className="text-2xl" />
-      </button>
-      <h2 className="text-lg font-bold">🚀 UTMart Beta Testing</h2>
-      <p className="text-gray-700 mt-2">
-        UTmart is currently in testing! Help us improve by sharing your feedback.
-      </p>
-      <a
-        href="https://forms.gle/yz9DirCmgy7WjBwz6" // Replace with actual form link
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block text-red-600 font-semibold mt-4"
-      >
-        ➡ Fill out the feedback form
-      </a>
-    </div>
-  </div>
-)}
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-30">
+          <div className="bg-white p-6 rounded-lg shadow-lg w-full h-full sm:w-96 sm:h-auto text-center relative flex flex-col justify-center items-center">
+            <button
+              onClick={() => setIsOpen(false)}
+              className="absolute top-4 right-4 text-gray-600 hover:text-gray-800"
+            >
+              <FaTimes className="text-2xl" />
+            </button>
+            <h2 className="text-xl font-bold mb-2 mt-12 sm:mt-0">
+              🎉 CampusMart is Now Live!
+            </h2>
+            <p className="text-gray-700 mb-4 px-4">
+              Download CampusMart today and start buying, selling, and exploring
+              your campus marketplace.
+            </p>
+
+            <div className="flex justify-center gap-4 mt-4 px-4">
+              {/* Play Store Badge */}
+              <a
+                href="https://play.google.com/store/apps/details?id=com.artist1711.campusapp"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/images/playstore.png"
+                  alt="Get it on Play Store"
+                  className="w-36 h-12 hover:scale-105 transition-transform"
+                />
+              </a>
+
+              {/* App Store Badge */}
+              <a
+                href="https://apps.apple.com/app/campus-mart/id6746312127"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/images/appstore.png"
+                  alt="Download on App Store"
+                  className="w-36 h-12 hover:scale-105 transition-transform"
+                />
+              </a>
+            </div>
+
+            <p className="text-gray-500 mt-6 text-sm px-4">
+              Prefer desktop? Visit our{" "}
+              <a
+                href="https://utmmart.netlify.app"
+                className="text-blue-600 font-semibold"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                web version
+              </a>{" "}
+              too.
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

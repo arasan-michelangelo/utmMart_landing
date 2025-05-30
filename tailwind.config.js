@@ -1,3 +1,5 @@
+
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -12,6 +14,9 @@ module.exports = {
         foreground: "var(--foreground)",
       },
     },
+    fontFamily:{
+      sans: ['var(--font-noto-serif)']
+    }
   },
   plugins: [],
 };
