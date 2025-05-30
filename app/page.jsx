@@ -6,12 +6,22 @@ import Image from "next/image";
 import { useState } from "react";
 import {
   FaShoppingCart,
-  FaUsers,
   FaTags,
+  FaUsers,
   FaRecycle,
-  FaTimes,
+  FaUtensils,
+  FaCar,
+  FaCoffee,
+  FaStar,
 } from "react-icons/fa";
+import DownloadButton from "./download";
 const benefits = [
+  {
+    icon: <FaStar className="text-white text-2xl" />,
+    title: "First University Marketplace",
+    description:
+      "CampusMart is the first all-in-one marketplace built for university students across Malaysia.",
+  },
   {
     icon: <FaShoppingCart className="text-white text-2xl" />,
     title: "Easy Buying & Selling",
@@ -34,12 +44,31 @@ const benefits = [
     title: "Sustainable Shopping",
     description: "Reduce waste by giving pre-loved items a new home.",
   },
+  {
+    icon: <FaUtensils className="text-white text-2xl" />,
+    title: "Food Delivery",
+    description:
+      "Find student-run food stalls and get meals delivered right to your hostel or class.",
+  },
+  {
+    icon: <FaCar className="text-white text-2xl" />,
+    title: "Ride Sharing",
+    description:
+      "Offer or book rides with fellow students for cheap, safe, and quick transportation.",
+  },
+  {
+    icon: <FaCoffee className="text-white text-2xl" />,
+    title: "Café Listings",
+    description:
+      "Discover and support local university cafés run by students or nearby vendors.",
+  },
 ];
+
 const faqs = [
   {
-    question: "What is UTmart?",
+    question: "What is CampusMart?",
     answer:
-      "UTmart is a platform for students to buy and sell items easily within their community.",
+      "CampusMart is a platform for students to buy and sell items easily within their community.",
   },
   {
     question: "How do I list an item for sale?",
@@ -47,7 +76,7 @@ const faqs = [
       "Simply create an account, navigate to the 'Sell' section, and upload details of your item.",
   },
   {
-    question: "Is UTmart free to use?",
+    question: "Is CampusMart free to use?",
     answer:
       "Yes! Listing and browsing items are completely free. We do not charge any commission on sales.",
   },
@@ -55,6 +84,41 @@ const faqs = [
     question: "How do I contact a seller?",
     answer:
       "You can message the seller directly through our in-app chat feature once you find an item you like.",
+  },
+  {
+    question: "Can I order food through CampusMart?",
+    answer:
+      "Yes! You can explore food options from student vendors and have them delivered right to your hostel or faculty.",
+  },
+  {
+    question: "Is there a ride-sharing feature?",
+    answer:
+      "Absolutely. CampusMart lets students offer or book rides within campus or nearby towns—making travel cheaper and easier.",
+  },
+  {
+    question: "Is CampusMart only for UTM students?",
+    answer:
+      "CampusMart is currently focused on UTM students, but we plan to expand to other universities soon.",
+  },
+  {
+    question: "How do I know if it’s safe to buy or ride with someone?",
+    answer:
+      "Each user has a profile, and we encourage verified accounts and ratings. Always meet in safe locations and trust your instincts.",
+  },
+  {
+    question: "What can I sell on CampusMart?",
+    answer:
+      "You can sell almost anything student-friendly—textbooks, electronics, clothes, event tickets, food, and more.",
+  },
+  {
+    question: "Is there a way to report suspicious users?",
+    answer:
+      "Yes, you can report users or listings directly within the app, and our team will take action immediately.",
+  },
+  {
+    question: "Can I suggest new features?",
+    answer:
+      "We’d love that! Just head to the feedback section in the app or message us on Telegram or Instagram.",
   },
 ];
 
@@ -79,28 +143,8 @@ export default function Home() {
 
       {/* Header */}
       <header className="flex justify-between items-center w-full max-w-md py-6">
-        <h1 className="text-2xl font-bold">CampusMart</h1>
-        <button
-          onClick={() => {
-            const userAgent =
-              navigator.userAgent || navigator.vendor || window.opera;
-
-            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-              // iOS device
-              window.location.href = "https://apps.apple.com/app/campus-mart/id6746312127";
-            } else if (/android/i.test(userAgent)) {
-              // Android device
-              window.location.href =
-                "https://play.google.com/store/apps/details?id=com.artist1711.campusapp";
-            } else {
-              // Fallback: send to website or show a message
-              window.location.href = "https://utmmart.netlify.app/";
-            }
-          }}
-          className="px-4 py-2 text-white bg-red-800 rounded-lg"
-        >
-          Download
-        </button>
+        <h1 className="text-2xl font-bold mt-7">CampusMart</h1>
+        <DownloadButton />
       </header>
 
       {/* Hero Section */}
@@ -133,6 +177,23 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
+            onClick={() => {
+              const userAgent =
+                navigator.userAgent || navigator.vendor || window.opera;
+
+              if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                // iOS device
+                window.location.href =
+                  "https://apps.apple.com/app/campus-mart/id6746312127";
+              } else if (/android/i.test(userAgent)) {
+                // Android device
+                window.location.href =
+                  "https://play.google.com/store/apps/details?id=com.artist1711.campusapp";
+              } else {
+                // Fallback: send to website or show a message
+                window.location.href = "https://utmmart.netlify.app/";
+              }
+            }}
           />
         </div>
       </section>
@@ -246,16 +307,6 @@ export default function Home() {
         >
           powerful features
         </motion.h2>
-        <motion.button
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ amount: 0.3 }}
-          onClick={() => setIsOpen(true)}
-          className="px-4 py-2 mt-7 text-white bg-red-800 rounded-lg"
-        >
-          Get Started
-        </motion.button>
       </section>
       {/* Call to Action Sections */}
       {[1, 2, 3, 4, 5].map((num) => (
@@ -279,7 +330,7 @@ export default function Home() {
               ? "Chat with the Seller!"
               : num === 4
               ? "Start Selling Today!"
-              : "Check Your Order Today!"}
+              : "Check Your Products Today!"}
           </motion.h3>
 
           {/* Description - Slide from Left */}
@@ -298,20 +349,12 @@ export default function Home() {
               ? "Connect directly with sellers through our in-app chat feature to negotiate deals and ask questions."
               : num === 4
               ? "Sell unused or pre-loved items within the student community and make extra cash effortlessly."
-              : "Stay updated with real-time order tracking and know exactly when your purchase will arrive."}
+              : "All the items details in one place."}
           </motion.p>
 
           {/* Button - Fade in */}
-          <motion.button
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ amount: 0.3 }}
-            onClick={() => setIsOpen(true)}
-            className="px-4 py-2 mt-7 text-white bg-red-800 rounded-lg"
-          >
-            Get Started
-          </motion.button>
+          
+            <DownloadButton />
 
           {/* Image - Rise from Bottom */}
           <motion.div
@@ -351,16 +394,8 @@ export default function Home() {
         >
           it does a lot of things
         </motion.h2>
-        <motion.button
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ amount: 0.3 }}
-          onClick={() => setIsOpen(true)}
-          className="px-4 py-2 mt-7 text-white bg-red-800 rounded-lg"
-        >
-          Get Started
-        </motion.button>
+        
+          <DownloadButton />
       </section>
       <motion.section
         className="py-16 text-center"
@@ -443,24 +478,47 @@ export default function Home() {
       </section>
 
       <motion.footer
-        initial={{ opacity: 0, y: 50 }} // Start hidden and slightly below
-        animate={{ opacity: 1, y: 0 }} // Fade in and move to position
-        transition={{ duration: 0.6, ease: "easeOut" }} // Smooth transition
-        className="bg-white text-gray-700 py-4 mt-10 w-full text-center"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="bg-white text-gray-700 py-6 mt-10 w-full text-center"
       >
         <p className="text-sm">
           Developed by <span className="font-semibold">MALAIARASAN</span>
         </p>
+
         <p className="text-sm mt-1">
           Contact:
           <a
             href="mailto:arasanmalai123@gmail.com"
-            className="text-red-400 hover:text-red-500 transition"
+            className="text-red-400 hover:text-red-500 transition ml-1"
           >
             arasanmalai123@gmail.com
           </a>
         </p>
-        <p className="text-xs text-gray-400 mt-2">
+
+        <div className="mt-4 flex justify-center space-x-4 text-sm ">
+          <a
+            href="/about"
+            className="text-blue-700 transition underline"
+          >
+            About
+          </a>
+          <a
+            href="/privacy-policy"
+            className="text-blue-700 transition underline"
+          >
+            Privacy Policy
+          </a>
+          <a
+            href="/terms"
+            className="text-blue-700 transition underline"
+          >
+            Terms & Conditions
+          </a>
+        </div>
+
+        <p className="text-xs text-gray-400 mt-4">
           © {new Date().getFullYear()} Malaiarasan. All rights reserved.
         </p>
       </motion.footer>
@@ -519,7 +577,7 @@ export default function Home() {
                 rel="noopener noreferrer"
               >
                 web version
-              </a>{" "}
+              </a>
               too.
             </p>
           </div>
