@@ -6,13 +6,13 @@ export default function TermsPage() {
   return (
     <main className="max-w-3xl mx-auto px-4 py-8 text-gray-800">
       {/* Title */}
-      <h1 className="text-2xl font-semibold mb-2">Terms & Conditions</h1>
+      <h1 className="text-2xl font-semibold mb-2">Terms &amp; Conditions</h1>
       <p className="mb-6 text-xs text-gray-500">Last updated: September 22, 2025</p>
 
       {/* Introduction */}
       <section className="mb-6 text-sm leading-6">
         <p>
-          Welcome to <strong>Campus</strong>! These Terms & Conditions ("<strong>Terms</strong>") govern your use of our services ("<strong>Services</strong>"), including the mobile app and website. By using Campus, you agree to comply with these Terms. If you do not agree, please do not use our Services.
+          Welcome to <strong>Campus</strong>! These Terms &amp; Conditions (&quot;<strong>Terms</strong>&quot;) govern your use of our services (&quot;<strong>Services</strong>&quot;), including the mobile app and website. By using Campus, you agree to comply with these Terms. If you do not agree, please do not use our Services.
         </p>
       </section>
 
@@ -102,7 +102,7 @@ export default function TermsPage() {
           <li>Harassment, bullying, or hate speech.</li>
           <li>Spamming, phishing, or deceptive practices.</li>
           <li>Attempting to hack or disrupt Campus services.</li>
-          <li>Violating others' privacy or intellectual property rights.</li>
+          <li>Violating others&apos; privacy or intellectual property rights.</li>
         </ul>
       </section>
 
@@ -142,7 +142,7 @@ export default function TermsPage() {
       <section id="disclaimers" className="mb-6 text-sm leading-6">
         <h2 className="font-medium mb-2">Disclaimers</h2>
         <p>
-          Campus provides Services "as is" without warranties of any kind. We do not guarantee uninterrupted or error-free service. Users accept all risks associated with use of the Services.
+          Campus provides Services &quot;as is&quot; without warranties of any kind. We do not guarantee uninterrupted or error-free service. Users accept all risks associated with use of the Services.
         </p>
       </section>
 
