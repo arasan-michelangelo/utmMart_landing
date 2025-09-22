@@ -11,123 +11,122 @@ export default function PrivacyPage() {
 
       {/* Intro */}
       <section className="mb-6 text-sm leading-6">
-  <p className="mb-3">
-    This Privacy Notice for <strong>Campus</strong> (&quot;<strong>we</strong>,&quot;
-    &quot;<strong>us</strong>,&quot; or &quot;<strong>our</strong>&quot;) explains how and why we may
-    access, collect, store, use, and/or share ("<strong>process</strong>") your personal
-    information when you use our services ("<strong>Services</strong>"), including when you:
-  </p>
-  <ul className="list-disc ml-5 space-y-1">
-    <li>Download and use the Campus mobile app or website.</li>
-    <li>Engage with features such as anonymous posts, chats, or the student marketplace.</li>
-    <li>Interact with us in any other related way — including support, events, or inquiries.</li>
-  </ul>
-</section>
+        <p className="mb-3">
+          This Privacy Notice for <strong>Campus</strong> (&quot;<strong>we</strong>&quot;, &quot;<strong>us</strong>&quot;, or &quot;<strong>our</strong>&quot;) explains how and why we may
+          access, collect, store, use, and/or share (<strong>process</strong>) your personal
+          information when you use our services (<strong>Services</strong>), including when you:
+        </p>
+        <ul className="list-disc ml-5 space-y-1">
+          <li>Download and use the Campus mobile app or website.</li>
+          <li>Engage with features such as anonymous posts, chats, or the student marketplace.</li>
+          <li>Interact with us in any other related way — including support, events, or inquiries.</li>
+        </ul>
+      </section>
 
-{/* Questions or concerns */}
-<section className="mb-6 text-sm leading-6">
-  <h2 className="font-medium mb-2">Questions or concerns?</h2>
-  <p>
-    Reading this Privacy Notice will help you understand your privacy rights and choices.
-    We are responsible for making decisions about how your personal information is processed. 
-    If you do not agree with our policies and practices, please do not use our Services. 
-    If you still have any questions or concerns, please contact us at{" "}
-    <a
-      href="mailto:arasanmalai123@gmail.com"
-      className="text-sky-600 hover:underline"
-    >
-      arasanmalai123@gmail.com
-    </a>.
-  </p>
-</section>
+      {/* Questions or concerns */}
+      <section className="mb-6 text-sm leading-6">
+        <h2 className="font-medium mb-2">Questions or concerns?</h2>
+        <p>
+          Reading this Privacy Notice will help you understand your privacy rights and choices.
+          We are responsible for making decisions about how your personal information is processed. 
+          If you do not agree with our policies and practices, please do not use our Services. 
+          If you still have any questions or concerns, please contact us at{" "}
+          <a
+            href="mailto:arasanmalai123@gmail.com"
+            className="text-sky-600 hover:underline"
+          >
+            arasanmalai123@gmail.com
+          </a>.
+        </p>
+      </section>
 
-{/* Summary of key points */}
-<section className="mb-6 text-sm leading-6">
-  <h2 className="font-medium mb-2">Summary of Key Points</h2>
-  <p className="mb-3">
-    This summary provides key points from our Privacy Notice, but you can find more details 
-    about any of these topics by clicking the related links below or by using our table of contents.
-  </p>
-  <ul className="list-disc ml-5 space-y-2">
-    <li>
-      <strong>What personal information do we process?</strong> When you visit, use, or 
-      navigate our Services, we may process personal information depending on how you interact 
-      with us and the Services, the choices you make, and the products and features you use.{" "}
-      <a href="#personalinfo" className="text-sky-600 hover:underline">
-        Learn more
-      </a>
-    </li>
-    <li>
-      <strong>Do we process any sensitive personal information?</strong> Some of the 
-      information may be considered &quot;special&quot; or &quot;sensitive&quot; in certain jurisdictions, 
-      for example your racial or ethnic origins, sexual orientation, and religious beliefs. 
-      We may process sensitive personal information when necessary with your consent or as 
-      otherwise permitted by law.{" "}
-      <a href="#sensitiveinfo" className="text-sky-600 hover:underline">
-        Learn more
-      </a>
-    </li>
-    <li>
-      <strong>Do we collect any information from third parties?</strong> We may collect 
-      information from public databases, marketing partners, social media platforms, and other 
-      outside sources.{" "}
-      <a href="#othersources" className="text-sky-600 hover:underline">
-        Learn more
-      </a>
-    </li>
-    <li>
-      <strong>How do we process your information?</strong> We process your information to 
-      provide, improve, and administer our Services, communicate with you, for security and 
-      fraud prevention, and to comply with law. We may also process your information for other 
-      purposes with your consent.{" "}
-      <a href="#infouse" className="text-sky-600 hover:underline">
-        Learn more
-      </a>
-    </li>
-    <li>
-      <strong>In what situations and with which parties do we share personal information?</strong>{" "}
-      We may share information in specific situations and with specific third parties.{" "}
-      <a href="#whoshare" className="text-sky-600 hover:underline">
-        Learn more
-      </a>
-    </li>
-    <li>
-      <strong>How do we keep your information safe?</strong> We have adequate organizational 
-      and technical processes and procedures in place to protect your personal information. 
-      However, no electronic transmission over the internet or information storage technology 
-      can be guaranteed to be 100% secure.{" "}
-      <a href="#infosafe" className="text-sky-600 hover:underline">
-        Learn more
-      </a>
-    </li>
-    <li>
-      <strong>What are your rights?</strong> Depending on where you are located geographically, 
-      the applicable privacy law may mean you have certain rights regarding your personal 
-      information.{" "}
-      <a href="#privacyrights" className="text-sky-600 hover:underline">
-        Learn more
-      </a>
-    </li>
-    <li>
-      <strong>How do you exercise your rights?</strong> The easiest way to exercise your rights 
-      is by contacting us at{" "}
-      <a
-        href="mailto:arasanmalai123@gmail.com"
-        className="text-sky-600 hover:underline"
-      >
-        arasanmalai123@gmail.com
-      </a>. We will consider and act upon any request in accordance with applicable data 
-      protection laws.
-    </li>
-  </ul>
+      {/* Summary of key points */}
+      <section className="mb-6 text-sm leading-6">
+        <h2 className="font-medium mb-2">Summary of Key Points</h2>
+        <p className="mb-3">
+          This summary provides key points from our Privacy Notice, but you can find more details 
+          about any of these topics by clicking the related links below or by using our table of contents.
+        </p>
+        <ul className="list-disc ml-5 space-y-2">
+          <li>
+            <strong>What personal information do we process?</strong> When you visit, use, or 
+            navigate our Services, we may process personal information depending on how you interact 
+            with us and the Services, the choices you make, and the products and features you use.{" "}
+            <a href="#personalinfo" className="text-sky-600 hover:underline">
+              Learn more
+            </a>
+          </li>
+          <li>
+            <strong>Do we process any sensitive personal information?</strong> Some of the 
+            information may be considered “special” or “sensitive” in certain jurisdictions, 
+            for example your racial or ethnic origins, sexual orientation, and religious beliefs. 
+            We may process sensitive personal information when necessary with your consent or as 
+            otherwise permitted by law.{" "}
+            <a href="#sensitiveinfo" className="text-sky-600 hover:underline">
+              Learn more
+            </a>
+          </li>
+          <li>
+            <strong>Do we collect any information from third parties?</strong> We may collect 
+            information from public databases, marketing partners, social media platforms, and other 
+            outside sources.{" "}
+            <a href="#othersources" className="text-sky-600 hover:underline">
+              Learn more
+            </a>
+          </li>
+          <li>
+            <strong>How do we process your information?</strong> We process your information to 
+            provide, improve, and administer our Services, communicate with you, for security and 
+            fraud prevention, and to comply with law. We may also process your information for other 
+            purposes with your consent.{" "}
+            <a href="#infouse" className="text-sky-600 hover:underline">
+              Learn more
+            </a>
+          </li>
+          <li>
+            <strong>In what situations and with which parties do we share personal information?</strong>{" "}
+            We may share information in specific situations and with specific third parties.{" "}
+            <a href="#whoshare" className="text-sky-600 hover:underline">
+              Learn more
+            </a>
+          </li>
+          <li>
+            <strong>How do we keep your information safe?</strong> We have adequate organizational 
+            and technical processes and procedures in place to protect your personal information. 
+            However, no electronic transmission over the internet or information storage technology 
+            can be guaranteed to be 100% secure.{" "}
+            <a href="#infosafe" className="text-sky-600 hover:underline">
+              Learn more
+            </a>
+          </li>
+          <li>
+            <strong>What are your rights?</strong> Depending on where you are located geographically, 
+            the applicable privacy law may mean you have certain rights regarding your personal 
+            information.{" "}
+            <a href="#privacyrights" className="text-sky-600 hover:underline">
+              Learn more
+            </a>
+          </li>
+          <li>
+            <strong>How do you exercise your rights?</strong> The easiest way to exercise your rights 
+            is by contacting us at{" "}
+            <a
+              href="mailto:arasanmalai123@gmail.com"
+              className="text-sky-600 hover:underline"
+            >
+              arasanmalai123@gmail.com
+            </a>. We will consider and act upon any request in accordance with applicable data 
+            protection laws.
+          </li>
+        </ul>
 
-  <p className="mt-4">
-    Want to learn more about what we do with any information we collect?{" "}
-    <a href="#toc" className="text-sky-600 hover:underline">
-      Review the Privacy Notice in full
-    </a>.
-  </p>
-</section>
+        <p className="mt-4">
+          Want to learn more about what we do with any information we collect?{" "}
+          <a href="#toc" className="text-sky-600 hover:underline">
+            Review the Privacy Notice in full
+          </a>.
+        </p>
+      </section>
 
 
             {/* Personal Information We Process */}
