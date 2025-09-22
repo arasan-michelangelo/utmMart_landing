@@ -151,8 +151,8 @@ export default function Home() {
           <Image
             src="/images/logo.png"
             alt="Logo"
-            width={40}
-            height={40}
+            width={112}
+            height={112}
             className="w-12 sm:w-14 md:w-16 lg:w-20 h-auto"
           />
         </div>
