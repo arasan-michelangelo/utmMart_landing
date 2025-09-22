@@ -288,11 +288,12 @@ export default function Home() {
                    hover:shadow-xl hover:scale-[1.03] 
                    transition-transform duration-300 overflow-hidden rounded-2xl"
             >
-              <img
-                src={`/images/features/${i + 2}.png`}
-                alt={`Feature ${i + 2}`}
-                className="w-full h-auto object-contain"
-              />
+               <Image
+    src={`/images/features/${i + 2}.png`}
+    alt={`Feature ${i + 2}`}
+    fill // lets the image fill the parent div
+    className="object-contain"
+  />
             </div>
           ))}
         </div>
@@ -329,12 +330,13 @@ export default function Home() {
 
           {/* Right side - image */}
           <div className="flex   lg:justify-end">
-            <img
-              src="/images/mobiledemo.png"
-              alt="CampusApp Mockup"
-              className="w-[250px] sm:w-[250px] md:w-[260px] lg:w-[300px] xl:w-[340px] 
-               h-auto object-contain"
-            />
+            <Image
+  src="/images/mobiledemo.png"
+  alt="Campus Mockup"
+  width={340}         // largest width you want to support
+  height={340}        // can be adjusted based on aspect ratio
+  className="object-contain w-full max-w-[340px] h-auto"
+/>
           </div>
         </div>
       </section>

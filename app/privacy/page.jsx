@@ -12,8 +12,8 @@ export default function PrivacyPage() {
       {/* Intro */}
       <section className="mb-6 text-sm leading-6">
   <p className="mb-3">
-    This Privacy Notice for <strong>Campus</strong> ("<strong>we</strong>,"
-    "<strong>us</strong>," or "<strong>our</strong>") explains how and why we may
+    This Privacy Notice for <strong>Campus</strong> (&quot;<strong>we</strong>,&quot;
+    &quot;<strong>us</strong>,&quot; or &quot;<strong>our</strong>&quot;) explains how and why we may
     access, collect, store, use, and/or share ("<strong>process</strong>") your personal
     information when you use our services ("<strong>Services</strong>"), including when you:
   </p>
@@ -59,7 +59,7 @@ export default function PrivacyPage() {
     </li>
     <li>
       <strong>Do we process any sensitive personal information?</strong> Some of the 
-      information may be considered "special" or "sensitive" in certain jurisdictions, 
+      information may be considered &quot;special&quot; or &quot;sensitive&quot; in certain jurisdictions, 
       for example your racial or ethnic origins, sexual orientation, and religious beliefs. 
       We may process sensitive personal information when necessary with your consent or as 
       otherwise permitted by law.{" "}
@@ -238,7 +238,7 @@ export default function PrivacyPage() {
       <section className="mb-6 text-sm leading-6">
         <h2 className="font-medium mb-2">Updates to This Privacy Notice</h2>
         <p>
-          <strong>Campus</strong> may update this Privacy Notice from time to time. Any updates will be posted on this page with the "Last updated" date revised. We encourage you to review this Privacy Notice periodically to stay informed about how we are protecting your information.
+          <strong>Campus</strong> may update this Privacy Notice from time to time. Any updates will be posted on this page with the &quot;Last updated&quot; date revised. We encourage you to review this Privacy Notice periodically to stay informed about how we are protecting your information.
         </p>
       </section>
 
