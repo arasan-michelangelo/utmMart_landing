@@ -279,25 +279,26 @@ export default function Home() {
 
       {/* Benefits Section */}
       <section className="w-full bg-black pb-12 px-4">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {[...Array(3)].map((_, i) => (
-            <div
-              key={i}
-              className="bg-white/70 backdrop-blur-xl 
+  <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4">
+    {[...Array(3)].map((_, i) => (
+      <div
+        key={i}
+        className="relative backdrop-blur-xl 
                    shadow-lg flex items-center justify-center
                    hover:shadow-xl hover:scale-[1.03] 
-                   transition-transform duration-300 overflow-hidden rounded-2xl"
-            >
-               <Image
-    src={`/images/features/${i + 2}.png`}
-    alt={`Feature ${i + 2}`}
-    fill // lets the image fill the parent div
-    className="object-contain"
-  />
-            </div>
-          ))}
-        </div>
-      </section>
+                   transition-transform duration-300 overflow-hidden 
+                   w-full h-[48rem]" // <-- added fixed height
+      >
+        <Image
+          src={`/images/features/${i + 2}.png`}
+          alt={`Feature ${i + 2}`}
+          fill
+          className="object-contain"
+        />
+      </div>
+    ))}
+  </div>
+</section>
 
       <section className="w-full bg-white py-16 px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
