@@ -126,10 +126,10 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white text-black font-inter flex flex-col relative">
       <Head>
-        <title>CampusApp - Malaysia’s 1st Student Social Media</title>
+        <title>Campus - Malaysia’s 1st Student Social Media</title>
         <meta
           name="description"
-          content="CampusApp lets students confess, connect, buy, sell, and explore — Malaysia’s 1st Student Social Media & Marketplace."
+          content="Campus lets students confess, connect, buy, sell, and explore — Malaysia’s 1st Student Social Media & Marketplace."
         />
       </Head>
 
