@@ -142,7 +142,7 @@ export default function TermsPage() {
       <section id="disclaimers" className="mb-6 text-sm leading-6">
         <h2 className="font-medium mb-2">Disclaimers</h2>
         <p>
-          Campus provides Services &quot;as is&quot; without warranties of any kind. We do not guarantee uninterrupted or error-free service. Users accept all risks associated with use of the Services.
+          Campus provides Services "as is" without warranties of any kind. We do not guarantee uninterrupted or error-free service. Users accept all risks associated with use of the Services.
         </p>
       </section>
 
