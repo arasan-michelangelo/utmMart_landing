@@ -134,7 +134,7 @@ export default function Home() {
       </Head>
 
       {/* Header */}
-      <header className="flex justify-between items-center w-full py-3 px-4 border-b border-gray-200 sticky top-0 bg-white z-30 md:px-16 lg:px-24">
+      {/* <header className="flex justify-between items-center w-full py-3 px-4 border-b border-gray-200 sticky top-0 bg-white z-30 md:px-16 lg:px-24">
         <button
           className="p-1 sm:p-2 md:p-3 lg:p-4"
           onClick={() => setIsOpenMenu(true)}
@@ -156,7 +156,7 @@ export default function Home() {
             className="w-12 sm:w-14 md:w-16 lg:w-20 h-auto"
           />
         </div>
-      </header>
+      </header> */}
 
       {/* Sidebar Menu */}
       {isOpenMenu && (
