@@ -18,7 +18,7 @@ function DownloadButton() {
   return (
     <button
   onClick={handleClick}
-  className="px-6 py-3 rounded-full font-bold text-white text-lg
+  className="px-6 py-3 rounded-xl font-normal text-white text-md
              shadow-lg hover:opacity-90 active:scale-95
              transition-all duration-200 bg-campus-gradient w-[200px]"
 >

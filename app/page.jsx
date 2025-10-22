@@ -1,385 +1,354 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
-import Head from "next/head";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Head from "next/head";
+import Link from "next/link";
+import { useState } from "react";
+import DownloadButton from "./download"; // adjust path if needed
+import { HugeiconsIcon } from "@hugeicons/react";
 import {
-  StarIcon,
-  ShoppingBag01Icon,
-  Tag01Icon,
   Copy01Icon,
   UserGroupIcon,
   Calendar01Icon,
-  Home01Icon,
-  Search01Icon,
-  Notification01Icon,
-  UserIcon,
-  MenuIcon,
+  ShoppingBag01Icon,
+  Tag01Icon,
+  StarIcon,
+  Menu03Icon,
   Cancel01Icon,
+  InstagramIcon,
+  RedditIcon,
 } from "@hugeicons/core-free-icons";
-import DownloadButton from "./download";
-import { HugeiconsIcon } from "@hugeicons/react";
-import Link from "next/link";
 
 const PRIMARY_COLOR = "#0079D3";
 
-const benefits = [
-  {
-    icon: (
-      <HugeiconsIcon
-        icon={Copy01Icon}
-        size={22}
-        color={"#fff"}
-        strokeWidth={1.5}
-      />
-    ),
-    title: "Confessions",
-    description: "Post thoughts, memes, or secrets anonymously.",
-  },
-  {
-    icon: (
-      <HugeiconsIcon
-        icon={UserGroupIcon}
-        size={22}
-        color={"#fff"}
-        strokeWidth={1.5}
-      />
-    ),
-    title: "Communities",
-    description: "Join groups, connect with peers, and share campus life.",
-  },
-  {
-    icon: (
-      <HugeiconsIcon
-        icon={Calendar01Icon}
-        size={22}
-        color={"#fff"}
-        strokeWidth={1.5}
-      />
-    ),
-    title: "Events",
-    description: "Discover campus events & club activities.",
-  },
-  {
-    icon: (
-      <HugeiconsIcon
-        icon={ShoppingBag01Icon}
-        size={22}
-        color={"#fff"}
-        strokeWidth={1.5}
-      />
-    ),
-    title: "Marketplace",
-    description: "Buy & sell items easily with students.",
-  },
-  {
-    icon: (
-      <HugeiconsIcon
-        icon={Tag01Icon}
-        size={22}
-        color={"#fff"}
-        strokeWidth={1.5}
-      />
-    ),
-    title: "Deals",
-    description: "Find the best student prices.",
-  },
-  {
-    icon: (
-      <HugeiconsIcon
-        icon={StarIcon}
-        size={22}
-        color={"#fff"}
-        strokeWidth={1.5}
-      />
-    ),
-    title: "Food & Rides",
-    description: "Student-run delivery & ride-sharing.",
-  },
-];
-
-const dummyPosts = [
-  {
-    id: 1,
-    title: "Just saw my crush at the library!",
-    description: "Anonymous post by student, 2h ago",
-  },
-  {
-    id: 2,
-    title: "Selling my old textbooks, DM me",
-    description: "Marketplace post, 5h ago",
-  },
-  {
-    id: 3,
-    title: "Who else is stressed with finals?",
-    description: "Confession, 1d ago",
-  },
-];
-
 export default function Home() {
-  const [openIndex, setOpenIndex] = useState(null);
-  const [isOpenMenu, setIsOpenMenu] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleFAQ = (index) => setOpenIndex(openIndex === index ? null : index);
+  const features = [
+    {
+      icon: Copy01Icon,
+      title: "Anonymous Confessions",
+      desc: "Post thoughts, secrets, or memes freely without judgment.",
+    },
+    {
+      icon: UserGroupIcon,
+      title: "Student Communities",
+      desc: "Join campus-based groups and connect with peers near you.",
+    },
+    {
+      icon: Calendar01Icon,
+      title: "Campus Events",
+      desc: "Stay updated on your university’s latest activities and club events.",
+    },
+    {
+      icon: ShoppingBag01Icon,
+      title: "Marketplace",
+      desc: "Buy, sell, or trade items with trusted students easily.",
+    },
+    {
+      icon: Tag01Icon,
+      title: "Deals & Discounts",
+      desc: "Find the best local student offers and save more.",
+    },
+    {
+      icon: StarIcon,
+      title: "Food & Rides",
+      desc: "Enjoy student-run food delivery and ride-sharing.",
+    },
+  ];
 
   return (
-    <div className="min-h-screen bg-white text-black font-inter flex flex-col relative">
+    <div className="min-h-screen bg-black text-white font-inter flex flex-col">
       <Head>
-        <title>Campus - Malaysia’s 1st Student Social Media</title>
+        <title>Campus – Malaysia’s 1st Student Social Media</title>
         <meta
           name="description"
           content="Campus lets students confess, connect, buy, sell, and explore — Malaysia’s 1st Student Social Media & Marketplace."
         />
       </Head>
 
-      {/* Header */}
-      {/* <header className="flex justify-between items-center w-full py-3 px-4 border-b border-gray-200 sticky top-0 bg-white z-30 md:px-16 lg:px-24">
-        <button
-          className="p-1 sm:p-2 md:p-3 lg:p-4"
-          onClick={() => setIsOpenMenu(true)}
-        >
-          <HugeiconsIcon
-            icon={MenuIcon}
-            size={24}
-            className="sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-10 lg:h-10"
-            color={PRIMARY_COLOR}
-          />
-        </button>
+      {/* ===== Hero Section ===== */}
+      <section className="relative w-full min-h-screen flex flex-col items-center justify-center pb-32 px-6 text-center overflow-hidden">
+        {/* ===== Header ===== */}
+        <header className="flex z-20 items-center justify-between w-full py-4 px-6 md:px-16 border-b border-white/10 fixed top-0  backdrop-blur-lg">
+          <div className="flex items-center gap-2">
+            <Image
+              src="/images/logo.png"
+              alt="Campus Logo"
+              width={40}
+              height={40}
+            />
+            <h1 className="text-xl font-semibold text-[#E0E0E0]">Campus</h1>
+          </div>
 
-        <div className="flex items-center gap-3">
-          <Image
-            src="/images/logo.png"
-            alt="Logo"
-            width={112}
-            height={112}
-            className="w-12 sm:w-14 md:w-16 lg:w-20 h-auto"
-          />
-        </div>
-      </header> */}
+          {/* ===== Desktop Nav ===== */}
+          <nav className="hidden md:flex gap-6 text-sm text-gray-300">
+            <Link href="/about" className="hover:text-white">
+              About
+            </Link>
+            <Link href="/features" className="hover:text-white">
+              Features
+            </Link>
+            <Link href="/why-campusapp" className="hover:text-white">
+              Why CampusApp
+            </Link>
+            <Link href="/contact" className="hover:text-white">
+              Contact
+            </Link>
+          </nav>
 
-      {/* Sidebar Menu */}
-      {isOpenMenu && (
-        <div className="fixed inset-0 z-40 flex">
-          <div
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm"
-            onClick={() => setIsOpenMenu(false)}
-          ></div>
-          <motion.div
-            initial={{ x: -300 }}
-            animate={{ x: 0 }}
-            exit={{ x: -300 }}
-            transition={{ duration: 0.3 }}
-            className="relative bg-white w-64 h-full shadow-lg p-6 flex flex-col"
-          >
-            <button
-              className="absolute top-4 right-4 p-1"
-              onClick={() => setIsOpenMenu(false)}
-            >
-              <HugeiconsIcon
-                icon={Cancel01Icon}
-                size={24}
-                color={PRIMARY_COLOR}
-              />
-            </button>
-            <h2
-              className="text-2xl font-bold mb-6"
-              style={{ color: PRIMARY_COLOR }}
-            >
-              Menu
-            </h2>
-            <nav className="flex flex-col gap-4 text-lg font-medium">
-              {[
-                "Home",
-                "Confessions",
-                "Communities",
-                "Events",
-                "Marketplace",
-                "Deals",
-                "Food & Rides",
-                "Profile",
-              ].map((item) => (
-                <a
-                  key={item}
-                  href="#"
-                  className="hover:text-blue-600 transition"
-                >
-                  {item}
-                </a>
-              ))}
-            </nav>
-          </motion.div>
-        </div>
-      )}
-
-      {/* Hero Section */}
-      <section className="relative w-full min-h-[70vh] ">
-        {/* Full-width background */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/hero.jpg')" }}
-        ></div>
-
-        {/* Content Container */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between px-4 pt-12 md:pt-0 md:px-16 min-h-[70vh]">
-          {/* Left Content */}
-          <div className="flex-1 flex flex-col justify-centermt-8">
-            <div className="flex items-center mb-4 gap-2">
-              <Image
-                src="/images/logo.png"
-                alt="Logo"
-                width={112}
-                height={112}
-                className="w-20 sm:w-24 md:w-28 lg:w-32 h-auto -mx-3"
-              />
-              <h1
-                className="text-5xl sm:text-5xl md:text-5xl lg:text-6xl font-medium"
-                style={{ color: PRIMARY_COLOR }}
-              >
-                Campus
-              </h1>
-            </div>
-
-            <p className="text-black text-lg sm:text-xl md:text-2xl lg:text-3xl mb-6 leading-relaxed max-w-md md:max-w-none font-normal">
-              Anonymous voices. <br />
-              Real campus talk. <br />
-              Best student marketplace.
-            </p>
-
+          {/* ===== Download Button (Desktop) ===== */}
+          <div className="hidden md:block">
             <DownloadButton />
           </div>
 
-          {/* Right Image / Mockup */}
-          <div className="flex-1 mt-8 md:mt-0 flex justify-center md:justify-end w-full">
-            {/* Mobile / small screen image */}
-            <Image
-              src="/images/example2.png"
-              alt="App Mockup Small"
-              width={300}
-              height={600}
-              className="w-full max-w-[320px] h-auto md:hidden"
+          {/* ===== Mobile Menu Button ===== */}
+          <button
+            className="md:hidden p-2 text-gray-300 hover:text-white transition-colors"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <HugeiconsIcon
+              icon={menuOpen ? Cancel01Icon : Menu03Icon}
+              size={24}
             />
+          </button>
 
-            {/* Medium and larger screen image */}
-            <Image
-              src="/images/example.png"
-              alt="App Mockup"
-              width={500}
-              height={1000}
-              className="
-    hidden md:block
-    w-full 
-    md:max-w-[480px] lg:max-w-[600px] xl:max-w-[720px] 2xl:max-w-[820px] 
-    h-auto
-  "
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="w-full bg-black pb-12 px-4">
-  <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4">
-    {[...Array(3)].map((_, i) => (
-      <div
-        key={i}
-        className="relative backdrop-blur-xl 
-                   shadow-lg flex items-center justify-center
-                   hover:shadow-xl hover:scale-[1.03] 
-                   transition-transform duration-300 overflow-hidden 
-                   w-full h-[48rem]" // <-- added fixed height
-      >
-        <Image
-          src={`/images/features/${i + 2}.png`}
-          alt={`Feature ${i + 2}`}
-          fill
-          className="object-contain"
-        />
-      </div>
-    ))}
-  </div>
-</section>
-
-      <section className="w-full bg-white py-16 px-6">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left side - text */}
-          <div>
-            <h2
-              className="text-3xl font-medium mb-6"
-              style={{ color: PRIMARY_COLOR }}
-            >
-              Get Started with Campus
-            </h2>
-
-            <p className="text-gray-600 text-lg leading-relaxed mb-8">
-              Open the app and log in to your student account. In just a few
-              clicks, you’ll unlock a world of anonymous campus voices, real
-              conversations, and the best student marketplace.
-            </p>
-
-            <div className="flex">
-              <DownloadButton />
-            </div>
-
-            <p className="mt-6 text-sm text-gray-500">
-              New here?{" "}
-              <a href="#" className="text-blue-600 hover:underline">
-                Learn more
-              </a>
-            </p>
-          </div>
-
-          {/* Right side - image */}
-          <div className="flex   lg:justify-end">
-            <Image
-  src="/images/mobiledemo.png"
-  alt="Campus Mockup"
-  width={340}         // largest width you want to support
-  height={340}        // can be adjusted based on aspect ratio
-  className="object-contain w-full max-w-[340px] h-auto"
-/>
-          </div>
-        </div>
-      </section>
-
-      <footer className="w-full bg-black text-gray-300 py-10 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex-1 flex flex-col justify-centermt-8">
-            <div className="flex items-center mb-4 gap-2">
-              <Image
-                src="/images/logo.png"
-                alt="Logo"
-                width={112}
-                height={112}
-                className="w-20 sm:w-24 md:w-28 lg:w-32 h-auto -mx-3"
-              />
-              <h1
-                className="text-5xl sm:text-5xl md:text-5xl lg:text-6xl font-medium"
-                style={{ color: PRIMARY_COLOR }}
+          {/* ===== Mobile Menu ===== */}
+          <AnimatePresence>
+            {menuOpen && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.25 }}
+                className="absolute top-full left-0 w-full bg-black/25 border-t border-white/10 md:hidden flex flex-col items-center text-gray-300 py-6 space-y-4  backdrop-blur-lg"
               >
-                Campus
-              </h1>
-            </div>
+                <Link
+                  href="/about"
+                  className="hover:text-white"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  About
+                </Link>
+                <Link
+                  href="/features"
+                  className="hover:text-white"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Features
+                </Link>
+                <Link
+                  href="/why-campusapp"
+                  className="hover:text-white"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Why CampusApp
+                </Link>
+                <Link
+                  href="/contact"
+                  className="hover:text-white"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Contact
+                </Link>
 
-          </div>
-          <p className="mb-4 text-lg">
-  Connect, share, and explore with <strong>Campus</strong>. Post anonymously, chat with fellow students, or find and sell items in the student marketplace—all in one place. Try it today.
-</p>
+                <DownloadButton />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </header>
+
+        {/* ===== Hero Background ===== */}
+        {/* <div
+          className="absolute inset-0 bg-cover bg-center opacity-30"
+          style={{ backgroundImage: "url('/images/hero.jpg')" }}
+        ></div> */}
+
+        {/* Background Video */}
+  <video
+    src="/sky.mp4"
+    className="absolute inset-0 w-full h-full object-cover"
+    autoPlay
+    muted
+    loop
+    playsInline
+  />
+
+  {/* Soft gradient overlay */}
+  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
 
 
-          <div className="flex flex-wrap gap-4 mb-6">
-            <DownloadButton/>
-          </div>
+        {/* ===== Hero Content ===== */}
+        <div className="relative z-10 max-w-2xl mx-auto pt-40 sm:pt-48">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-4xl sm:text-5xl font-semibold mb-6 bg-gradient-to-b from-[#E0E0E0] to-[#6F8099] bg-clip-text text-transparent"
+          >
+            Real People. Real Confessions.
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+            className="text-gray-400 text-base sm:text-lg leading-relaxed mb-8"
+          >
+            A safe and anonymous space for Malaysia’s students to share stories,
+            express thoughts, and build real campus communities.
+          </motion.p>
 
-          <div className="flex flex-wrap gap-4 text-sm text-gray-500">
-  <Link href="/privacy" className="hover:text-gray-700">Privacy</Link>
-  <Link href="/terms" className="hover:text-gray-700">Terms</Link>
-  <Link href="/help" className="hover:text-gray-700">Help</Link>
-</div>
+          <DownloadButton />
 
-          <p className="mt-6 text-xs text-gray-500">© 2025 Campus</p>
+          {/* <p className="mt-6 text-sm text-gray-500">
+            Already have an account?{" "}
+            <Link href="#" className="text-[#0079D3] hover:underline">
+              Sign In
+            </Link>
+          </p> */}
         </div>
-      </footer>
+      </section>
+
+      {/* ===== Features Section ===== */}
+      <section className="w-full bg-white text-black py-20 px-6">
+        <div className="max-w-6xl mx-auto text-center mb-12">
+          <h3
+            className="text-3xl font-semibold mb-4"
+            style={{ color: PRIMARY_COLOR }}
+          >
+            What You Can Do on Campus
+          </h3>
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            Campus isn’t just an app — it’s your digital campus life, all in one
+            place.
+          </p>
+        </div>
+
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {features.map((f, i) => (
+            <motion.div
+              key={i}
+              whileHover={{ scale: 1.05 }}
+              className="bg-[#F8F9FA] p-8 rounded-2xl shadow-md text-center"
+            >
+              <div className="flex justify-center mb-4">
+                <HugeiconsIcon icon={f.icon} size={30} color={PRIMARY_COLOR} />
+              </div>
+              <h4 className="text-xl font-semibold mb-2 text-[#111]">
+                {f.title}
+              </h4>
+              <p className="text-gray-600 text-sm">{f.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* ===== App Preview Section ===== */}
+      <section className="w-full bg-black py-24 px-6 text-center">
+        <div className="max-w-6xl mx-auto flex flex-col items-center gap-10">
+          <h3
+            className="text-3xl font-semibold mb-2"
+            style={{ color: PRIMARY_COLOR }}
+          >
+            See Campus in Action
+          </h3>
+          <p className="text-gray-400 max-w-2xl mb-6">
+            Designed for simplicity and freedom — explore your campus’s social
+            world.
+          </p>
+
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 w-full">
+            {[2, 3, 4].map((i) => (
+              <div
+                key={i}
+                className="relative h-[700px] sm:h-[500px] rounded-xl overflow-hidden border border-white/10 shadow-lg hover:scale-[1.02] transition-transform"
+              >
+                <Image
+                  src={`/images/features/${i + 0}.png`}
+                  alt={`App Feature ${i}`}
+                  fill
+                  className="object-contain bg-[#111]"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== CTA Section ===== */}
+      <section className="w-full bg-white py-20 px-6 text-center">
+        <h3
+          className="text-3xl font-semibold mb-4"
+          style={{ color: PRIMARY_COLOR }}
+        >
+          Be Part of the New Campus Experience
+        </h3>
+        <p className="text-gray-700 text-lg max-w-2xl mx-auto mb-8">
+          Campus is changing how students connect, vent, and collaborate.
+          Download now and be part of the movement.
+        </p>
+        <DownloadButton />
+      </section>
+
+      {/* ===== Footer ===== */}
+      <footer className="w-full bg-black text-gray-300 py-10 px-6">
+  <div className="max-w-6xl mx-auto">
+    {/* Logo + Title */}
+    <div className="flex items-center mb-4 gap-2">
+      <Image src="/images/logo.png" alt="Logo" width={50} height={50} />
+      <h1
+        className="text-2xl font-semibold"
+        style={{ color: PRIMARY_COLOR }}
+      >
+        Campus
+      </h1>
+    </div>
+
+    {/* Description */}
+    <p className="mb-4 text-gray-400 text-sm max-w-lg">
+      Campus connects students through stories, events, and marketplace deals —
+      building Malaysia’s most supportive student community.
+    </p>
+
+    {/* Footer Links */}
+    <div className="flex flex-wrap gap-4 text-sm text-gray-500 mb-6">
+      <Link href="/privacy" className="hover:text-gray-300">
+        Privacy
+      </Link>
+      <Link href="/terms" className="hover:text-gray-300">
+        Terms
+      </Link>
+      <Link href="/help" className="hover:text-gray-300">
+        Help
+      </Link>
+    </div>
+
+    {/* Social Media */}
+    <div className="flex items-center gap-4 mt-4">
+      <a
+        href="https://www.instagram.com/thecmpsapp"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-gray-400 hover:text-white transition-colors"
+      >
+        <HugeiconsIcon icon={InstagramIcon} size={27} color={PRIMARY_COLOR} />
+      </a>
+      <a
+        href="https://www.reddit.com/r/cmpsapp"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-gray-400 hover:text-white transition-colors"
+      >
+        <HugeiconsIcon icon={RedditIcon} size={27} color={PRIMARY_COLOR} />
+      </a>
+    </div>
+
+    {/* Copyright */}
+    <p className="mt-6 text-xs text-gray-500">© 2025 Campus</p>
+  </div>
+</footer>
+
     </div>
   );
 }

@@ -184,10 +184,10 @@ export default function TermsPage() {
         <p>
           For questions or concerns regarding these Terms, contact us at:{" "}
           <a
-            href="mailto:arasanmalai123@gmail.com"
+            href="mailto:cmps.app.official@gmail.com"
             className="text-sky-600 hover:underline"
           >
-            arasanmalai123@gmail.com
+            cmps.app.official@gmail.com
           </a>.
         </p>
       </section>

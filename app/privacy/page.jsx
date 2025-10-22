@@ -32,10 +32,10 @@ export default function PrivacyPage() {
           If you do not agree with our policies and practices, please do not use our Services. 
           If you still have any questions or concerns, please contact us at{" "}
           <a
-            href="mailto:arasanmalai123@gmail.com"
+            href="mailto:cmps.app.official@gmail.com"
             className="text-sky-600 hover:underline"
           >
-            arasanmalai123@gmail.com
+            cmps.app.official@gmail.com
           </a>.
         </p>
       </section>
@@ -111,10 +111,10 @@ export default function PrivacyPage() {
             <strong>How do you exercise your rights?</strong> The easiest way to exercise your rights 
             is by contacting us at{" "}
             <a
-              href="mailto:arasanmalai123@gmail.com"
+              href="mailto:cmps.app.official@gmail.com"
               className="text-sky-600 hover:underline"
             >
-              arasanmalai123@gmail.com
+              cmps.app.official@gmail.com
             </a>. We will consider and act upon any request in accordance with applicable data 
             protection laws.
           </li>
@@ -225,10 +225,10 @@ export default function PrivacyPage() {
         <p>
           You can exercise your rights by contacting us at{" "}
           <a
-            href="mailto:arasanmalai123@gmail.com"
+            href="mailto:cmps.app.official@gmail.com"
             className="text-sky-600 hover:underline"
           >
-            arasanmalai123@gmail.com
+            cmps.app.official@gmail.com
           </a>. We will respond in accordance with applicable data protection laws.
         </p>
       </section>
@@ -250,10 +250,10 @@ export default function PrivacyPage() {
         <p>
           Email:{" "}
           <a
-            href="mailto:arasanmalai123@gmail.com"
+            href="mailto:cmps.app.official@gmail.com"
             className="text-sky-600 hover:underline"
           >
-            arasanmalai123@gmail.com
+            cmps.app.official@gmail.com
           </a>
         </p>
       </section>
