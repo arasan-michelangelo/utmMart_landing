@@ -36,26 +36,26 @@ export default function Home() {
       title: "Student Communities",
       desc: "Join campus-based groups and connect with peers near you.",
     },
-    {
-      icon: Calendar01Icon,
-      title: "Campus Events",
-      desc: "Stay updated on your university’s latest activities and club events.",
-    },
+    // {
+    //   icon: Calendar01Icon,
+    //   title: "Campus Events",
+    //   desc: "Stay updated on your university’s latest activities and club events.",
+    // },
     {
       icon: ShoppingBag01Icon,
       title: "Marketplace",
       desc: "Buy, sell, or trade items with trusted students easily.",
     },
-    {
-      icon: Tag01Icon,
-      title: "Deals & Discounts",
-      desc: "Find the best local student offers and save more.",
-    },
-    {
-      icon: StarIcon,
-      title: "Food & Rides",
-      desc: "Enjoy student-run food delivery and ride-sharing.",
-    },
+    // {
+    //   icon: Tag01Icon,
+    //   title: "Deals & Discounts",
+    //   desc: "Find the best local student offers and save more.",
+    // },
+    // {
+    //   icon: StarIcon,
+    //   title: "Food & Rides",
+    //   desc: "Enjoy student-run food delivery and ride-sharing.",
+    // },
   ];
 
   return (
