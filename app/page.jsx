@@ -18,6 +18,7 @@ import {
   Cancel01Icon,
   InstagramIcon,
   RedditIcon,
+  Message01Icon,
 } from "@hugeicons/core-free-icons";
 
 const PRIMARY_COLOR = "#0079D3";
@@ -27,35 +28,47 @@ export default function Home() {
 
   const features = [
     {
+      title: "Confessions",
+      desc: "Share your thoughts, secrets, or memes anonymously. Stay real, stay safe, and let your voice be heard.",
       icon: Copy01Icon,
-      title: "Anonymous Confessions",
-      desc: "Post thoughts, secrets, or memes freely without judgment.",
-    },
-    {
-      icon: UserGroupIcon,
-      title: "Student Communities",
-      desc: "Join campus-based groups and connect with peers near you.",
+      image: "/confession.mp4",
     },
     // {
+    //   title: "Communities",
+    //   desc: "Join student-led groups, clubs, and societies. Connect over shared passions or campus vibes.",
+    //   icon: UserGroupIcon,
+    //   image: "/images/features/2.png",
+    // },
+    // {
+    //   title: "Events",
+    //   desc: "Discover what’s happening around campus — from club fairs to concerts and academic meetups.",
     //   icon: Calendar01Icon,
-    //   title: "Campus Events",
-    //   desc: "Stay updated on your university’s latest activities and club events.",
+    //   image: "/images/features/3.png",
     // },
     {
-      icon: ShoppingBag01Icon,
       title: "Marketplace",
-      desc: "Buy, sell, or trade items with trusted students easily.",
+      desc: "Buy, sell, or trade items easily with students on your campus. Textbooks, gadgets, dorm essentials — all in one place.",
+      icon: ShoppingBag01Icon,
+      image: "/marketplace.mp4",
     },
     // {
+    //   title: "Deals",
+    //   desc: "Find exclusive student discounts on food, transport, and more — verified by real users.",
     //   icon: Tag01Icon,
-    //   title: "Deals & Discounts",
-    //   desc: "Find the best local student offers and save more.",
+    //   image: "/spark.mp4",
     // },
     // {
-    //   icon: StarIcon,
     //   title: "Food & Rides",
-    //   desc: "Enjoy student-run food delivery and ride-sharing.",
+    //   desc: "Order student-run food deliveries or ride-sharing services at affordable campus-friendly prices.",
+    //   icon: StarIcon,
+    //   image: "/images/features/6.png",
     // },
+    {
+      title: "Chat & Connect",
+      desc: "Start real conversations with other students — whether it’s deep talks, group chats, or casual DMs. Stay anonymous or go public when you’re ready.",
+      icon: Message01Icon,
+      image: "/chat.mp4",
+    },
   ];
 
   return (
@@ -85,14 +98,14 @@ export default function Home() {
           {/* ===== Desktop Nav ===== */}
           <nav className="hidden md:flex gap-6 text-sm text-gray-300">
             <Link href="/about" className="hover:text-white">
-              About
+              About Us
             </Link>
-            <Link href="/features" className="hover:text-white">
+            {/* <Link href="/features" className="hover:text-white">
               Features
-            </Link>
-            <Link href="/why-campusapp" className="hover:text-white">
+            </Link> */}
+            {/* <Link href="/why-campusapp" className="hover:text-white">
               Why CampusApp
-            </Link>
+            </Link> */}
             <Link href="/contact" className="hover:text-white">
               Contact
             </Link>
@@ -105,7 +118,7 @@ export default function Home() {
 
           {/* ===== Mobile Menu Button ===== */}
           <button
-            className="md:hidden p-2 text-gray-300 hover:text-white transition-colors"
+            className="md:hidden p-2 text-gray-300 hover:text-white transition-colors "
             onClick={() => setMenuOpen(!menuOpen)}
           >
             <HugeiconsIcon
@@ -118,66 +131,46 @@ export default function Home() {
           <AnimatePresence>
             {menuOpen && (
               <motion.div
-                initial={{ opacity: 0, y: -10 }}
+                initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.25 }}
-                className="absolute top-full left-0 w-full bg-black/25 border-t border-white/10 md:hidden flex flex-col items-center text-gray-300 py-6 space-y-4  backdrop-blur-lg"
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+                className="absolute top-full left-0 w-full md:hidden flex flex-col items-center py-6 space-y-4 bg-black/25 backdrop-blur-lg border-t border-white/10 rounded-b-xl shadow-xl z-50"
               >
                 <Link
                   href="/about"
-                  className="hover:text-white"
+                  className="w-full text-center py-2 text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition"
                   onClick={() => setMenuOpen(false)}
                 >
-                  About
-                </Link>
-                <Link
-                  href="/features"
-                  className="hover:text-white"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  Features
-                </Link>
-                <Link
-                  href="/why-campusapp"
-                  className="hover:text-white"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  Why CampusApp
-                </Link>
-                <Link
-                  href="/contact"
-                  className="hover:text-white"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  Contact
+                  About us
                 </Link>
 
-                <DownloadButton />
+                <Link
+                  href="/contact"
+                  className="w-full text-center py-2 text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Contact us
+                </Link>
+
+                <DownloadButton className="mt-2" />
               </motion.div>
             )}
           </AnimatePresence>
         </header>
 
-        {/* ===== Hero Background ===== */}
-        {/* <div
-          className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{ backgroundImage: "url('/images/hero.jpg')" }}
-        ></div> */}
-
         {/* Background Video */}
-  <video
-    src="/sky.mp4"
-    className="absolute inset-0 w-full h-full object-cover"
-    autoPlay
-    muted
-    loop
-    playsInline
-  />
+        <video
+          src="/sky.mp4"
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
 
-  {/* Soft gradient overlay */}
-  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-
+        {/* Soft gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
 
         {/* ===== Hero Content ===== */}
         <div className="relative z-10 max-w-2xl mx-auto pt-40 sm:pt-48">
@@ -200,46 +193,64 @@ export default function Home() {
           </motion.p>
 
           <DownloadButton />
-
-          {/* <p className="mt-6 text-sm text-gray-500">
-            Already have an account?{" "}
-            <Link href="#" className="text-[#0079D3] hover:underline">
-              Sign In
-            </Link>
-          </p> */}
         </div>
       </section>
 
-      {/* ===== Features Section ===== */}
-      <section className="w-full bg-white text-black py-20 px-6">
-        <div className="max-w-6xl mx-auto text-center mb-12">
-          <h3
-            className="text-3xl font-semibold mb-4"
-            style={{ color: PRIMARY_COLOR }}
-          >
-            What You Can Do on Campus
-          </h3>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Campus isn’t just an app — it’s your digital campus life, all in one
-            place.
-          </p>
-        </div>
+      <div className="relative w-full mx-auto h-[300px] sm:h-[500px] rounded-xl shadow-lg">
+        <Image
+          src={`/images/landing.png`}
+          alt="Campus App Preview"
+          fill
+          className="object-contain bg-[#111]"
+          priority
+        />
+      </div>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <section className="w-full text-center py-24 px-6 bg-black">
+        <h2 className="text-4xl md:text-5xl font-semibold mb-6 bg-gradient-to-b from-[#E0E0E0] to-[#6F8099] bg-clip-text text-transparent">
+          Everything You Need, On Campus
+        </h2>
+        <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          Campus isn’t just another social app — it’s your all-in-one student
+          life hub. Confess, connect, trade, and explore with ease.
+        </p>
+      </section>
+      {/* ====== Features Grid ====== */}
+      <section className="w-full text-black  px-6">
+        <div className=" mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {features.map((f, i) => (
-            <motion.div
+            <div
               key={i}
-              whileHover={{ scale: 1.05 }}
-              className="bg-[#F8F9FA] p-8 rounded-2xl shadow-md text-center"
+              className="relative rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden "
             >
-              <div className="flex justify-center mb-4">
-                <HugeiconsIcon icon={f.icon} size={30} color={PRIMARY_COLOR} />
+              {/* Full video background */}
+              <video
+                src={f.image}
+                className="absolute inset-0 w-full h-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
+
+              {/* Gradient overlay for contrast */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+
+              {/* Content overlay */}
+              <div className="relative z-10 p-6 flex flex-col justify-end h-64 text-white">
+                <div className="flex items-center gap-3 mb-3">
+                  <HugeiconsIcon
+                    icon={f.icon}
+                    size={26}
+                    color={PRIMARY_COLOR}
+                  />
+                  <h3 className="text-xl font-semibold">{f.title}</h3>
+                </div>
+                <p className="text-gray-200 text-sm leading-relaxed">
+                  {f.desc}
+                </p>
               </div>
-              <h4 className="text-xl font-semibold mb-2 text-[#111]">
-                {f.title}
-              </h4>
-              <p className="text-gray-600 text-sm">{f.desc}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </section>
@@ -293,62 +304,69 @@ export default function Home() {
 
       {/* ===== Footer ===== */}
       <footer className="w-full bg-black text-gray-300 py-10 px-6">
-  <div className="max-w-6xl mx-auto">
-    {/* Logo + Title */}
-    <div className="flex items-center mb-4 gap-2">
-      <Image src="/images/logo.png" alt="Logo" width={50} height={50} />
-      <h1
-        className="text-2xl font-semibold"
-        style={{ color: PRIMARY_COLOR }}
-      >
-        Campus
-      </h1>
-    </div>
+        <div className="max-w-6xl mx-auto">
+          {/* Logo + Title */}
+          <div className="flex items-center mb-4 gap-2">
+            <Image src="/images/logo.png" alt="Logo" width={50} height={50} />
+            <h1
+              className="text-2xl font-semibold"
+              style={{ color: PRIMARY_COLOR }}
+            >
+              Campus
+            </h1>
+          </div>
 
-    {/* Description */}
-    <p className="mb-4 text-gray-400 text-sm max-w-lg">
-      Campus connects students through stories, events, and marketplace deals —
-      building Malaysia’s most supportive student community.
-    </p>
+          {/* Description */}
+          <p className="mb-4 text-gray-400 text-sm max-w-lg">
+            Campus connects students through stories, events, and marketplace
+            deals — building Malaysia’s most supportive student community.
+          </p>
 
-    {/* Footer Links */}
-    <div className="flex flex-wrap gap-4 text-sm text-gray-500 mb-6">
-      <Link href="/privacy" className="hover:text-gray-300">
-        Privacy
-      </Link>
-      <Link href="/terms" className="hover:text-gray-300">
-        Terms
-      </Link>
-      <Link href="/help" className="hover:text-gray-300">
-        Help
-      </Link>
-    </div>
+          {/* Footer Links */}
+          <div className="flex flex-wrap gap-4 text-sm text-gray-500 mb-6">
+            <Link href="/privacy" className="hover:text-gray-300">
+              Privacy
+            </Link>
+            <Link href="/terms" className="hover:text-gray-300">
+              Terms
+            </Link>
+            <Link href="/help" className="hover:text-gray-300">
+              Help
+            </Link>
+          </div>
 
-    {/* Social Media */}
-    <div className="flex items-center gap-4 mt-4">
-      <a
-        href="https://www.instagram.com/thecmpsapp"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-gray-400 hover:text-white transition-colors"
-      >
-        <HugeiconsIcon icon={InstagramIcon} size={27} color={PRIMARY_COLOR} />
-      </a>
-      <a
-        href="https://www.reddit.com/r/cmpsapp"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-gray-400 hover:text-white transition-colors"
-      >
-        <HugeiconsIcon icon={RedditIcon} size={27} color={PRIMARY_COLOR} />
-      </a>
-    </div>
+          {/* Social Media */}
+          <div className="flex items-center gap-4 mt-4">
+            <a
+              href="https://www.instagram.com/thecmpsapp"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+              <HugeiconsIcon
+                icon={InstagramIcon}
+                size={27}
+                color={PRIMARY_COLOR}
+              />
+            </a>
+            <a
+              href="https://www.reddit.com/r/cmpsapp"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+              <HugeiconsIcon
+                icon={RedditIcon}
+                size={27}
+                color={PRIMARY_COLOR}
+              />
+            </a>
+          </div>
 
-    {/* Copyright */}
-    <p className="mt-6 text-xs text-gray-500">© 2025 Campus</p>
-  </div>
-</footer>
-
+          {/* Copyright */}
+          <p className="mt-6 text-xs text-gray-500">© 2025 Campus</p>
+        </div>
+      </footer>
     </div>
   );
 }

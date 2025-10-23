@@ -9,6 +9,11 @@ import {
   RocketIcon,
   Menu03Icon,
   Cancel01Icon,
+  BubbleChatFavouriteIcon,
+  SquareLock01Icon,
+  ShieldEnergyIcon,
+  EarthIcon,
+
 } from "@hugeicons/core-free-icons";
 import Link from "next/link";
 import { useState } from "react";
@@ -155,46 +160,139 @@ export default function About() {
         </div>
       </section>
 
-      {/* Core Values */}
-      <section className="w-full bg-black py-24 px-6">
-        <div className="max-w-5xl mx-auto text-center mb-12">
-          <h3 className="text-3xl font-semibold mb-4" style={{ color: PRIMARY_COLOR }}>
-            Our Core Values
+      <section className="relative w-full py-28 mt-16 flex flex-col items-center text-center px-6 bg-black">
+              <h2 className="text-4xl md:text-5xl font-semibold mb-6 bg-gradient-to-b from-[#E0E0E0] to-[#6F8099] bg-clip-text text-transparent">
+                Why CampusApp Exists
+              </h2>
+              <p className="text-gray-400 max-w-2xl text-lg leading-relaxed">
+                We built CampusApp to fix what’s broken about student life online —
+                too many fake profiles, judgment, and stress. Campus is your
+                anonymous, authentic home where real voices matter.
+              </p>
+            </section>
+      
+      {/* The Story – From Noise to Connection */}
+      <section className="relative w-full text-white py-40 px-6 overflow-hidden">
+        {/* Background Video */}
+        <video
+          src="/noise.mp4"
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+      
+        {/* Overlay for readability */}
+        <div className="absolute inset-0 bg-black/60"></div>
+      
+        {/* Content */}
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
+          <h3 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: PRIMARY_COLOR }}>
+            The Noise
           </h3>
-          <p className="text-gray-400 text-lg">
-            Everything we do revolves around empathy, authenticity, and community.
+          <p className="text-gray-200 text-lg leading-relaxed mb-4">
+            Scroll. Like. Post. Repeat.  
+            Every day, students drown in endless feeds — voices shouting, filters glowing, hearts racing to keep up.  
+            Somewhere between validation and exhaustion, we stopped being <span className="italic">real</span>.
+          </p>
+          <p className="text-gray-400 leading-relaxed max-w-2xl mx-auto">
+            Behind every “perfect” post is a student just trying to be heard.  
+            But the louder the world gets, the quieter our truth becomes.
           </p>
         </div>
-
-        <div className="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto">
-          {[
-            {
-              icon: <HugeiconsIcon icon={UserGroupIcon} size={30} color="#fff" />,
-              title: "Community First",
-              desc: "We prioritize safe, inclusive spaces for every student voice.",
-            },
-            {
-              icon: <HugeiconsIcon icon={FavouriteIcon} size={30} color="#fff" />,
-              title: "Empathy & Respect",
-              desc: "Every post, every comment, every interaction — built on understanding.",
-            },
-            {
-              icon: <HugeiconsIcon icon={RocketIcon} size={30} color="#fff" />,
-              title: "Innovation for Students",
-              desc: "We evolve with campus life, bringing creative tools and new ways to connect.",
-            },
-          ].map((v, i) => (
-            <div
-              key={i}
-              className="bg-[#111] border border-white/10 p-8 rounded-2xl flex flex-col items-center text-center hover:scale-[1.03] transition-transform duration-300"
-            >
-              <div className="mb-4">{v.icon}</div>
-              <h4 className="text-xl font-semibold mb-2 text-white">{v.title}</h4>
-              <p className="text-gray-400 text-sm leading-relaxed">{v.desc}</p>
-            </div>
-          ))}
+      </section>
+      
+      {/* The Spark */}
+      <section className="relative w-full text-white py-40 px-6 overflow-hidden">
+        {/* Background Video */}
+        <video
+          src="/spark2.mp4"
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+      
+        {/* Soft gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+      
+        {/* Content */}
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
+          <h3 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: PRIMARY_COLOR }}>
+            The Spark
+          </h3>
+          <p className="text-gray-200 text-lg leading-relaxed mb-4">
+            It began with a question:  
+            <span className="italic">What if students could speak without fear?</span>  
+            No judgment. No pressure. Just honesty — raw, unfiltered, human.
+          </p>
+          <p className="text-gray-400 leading-relaxed max-w-2xl mx-auto">
+            That question became a whisper.  
+            Then a voice.  
+            Then a movement — students across Malaysia finding a space that finally feels like home.
+          </p>
         </div>
       </section>
+      
+      
+            {/* What Makes Us Different */}
+            <section className="w-full bg-black py-24 px-6">
+              <div className="max-w-5xl mx-auto text-center mb-12">
+                <h3 className="text-3xl font-semibold mb-4" style={{ color: PRIMARY_COLOR }}>
+                  What Makes Us Different
+                </h3>
+                <p className="text-gray-400 text-lg">
+                  We’re not just another app. We’re a student movement focused on privacy,
+                  empathy, and empowerment.
+                </p>
+              </div>
+      
+              <div className="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+                {[
+                  {
+                    icon: <HugeiconsIcon icon={BubbleChatFavouriteIcon} size={28} color="#fff" />,
+                    title: "Anonymous, but Real",
+                    desc: "Share without fear. Be honest. Be authentic. Your voice matters.",
+                  },
+                  {
+                    icon: <HugeiconsIcon icon={SquareLock01Icon} size={28} color="#fff" />,
+                    title: "Privacy First",
+                    desc: "Campus is built around your safety — no data selling, no outsiders.",
+                  },
+                  {
+                    icon: <HugeiconsIcon icon={UserGroupIcon} size={28} color="#fff" />,
+                    title: "Verified Campus Network",
+                    desc: "Only real students with verified campus emails can join your community.",
+                  },
+                  {
+                    icon: <HugeiconsIcon icon={ShieldEnergyIcon} size={28} color="#fff" />,
+                    title: "Community Moderation",
+                    desc: "Students help maintain respectful and supportive discussions.",
+                  },
+                  {
+                    icon: <HugeiconsIcon icon={EarthIcon} size={28} color="#fff" />,
+                    title: "Expanding Across Malaysia",
+                    desc: "We’re connecting universities nationwide under one student voice.",
+                  },
+                  {
+                    icon: <HugeiconsIcon icon={FavouriteIcon} size={28} color="#fff" />,
+                    title: "Built with Empathy",
+                    desc: "We understand because we’re students too. Every feature is for you.",
+                  },
+                ].map((v, i) => (
+                  <div
+                    key={i}
+                    className="bg-[#111] border border-white/10 p-8 rounded-2xl flex flex-col items-center text-center hover:scale-[1.03] transition-transform duration-300"
+                  >
+                    <div className="mb-4">{v.icon}</div>
+                    <h4 className="text-xl font-semibold mb-2 text-white">{v.title}</h4>
+                    <p className="text-gray-400 text-sm leading-relaxed">{v.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
 
       {/* Call to Action */}
       <section className="w-full bg-white py-20 px-6 text-center">
